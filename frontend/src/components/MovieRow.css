@@ -1,0 +1,132 @@
+.movie-row {
+  margin-bottom: 3rem;
+  padding: 0 4rem;
+}
+
+.movie-row-title {
+  color: #e5e5e5;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.movie-row-title:hover {
+  color: #fff;
+}
+
+.movie-row-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.movie-row-posters {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 1rem 0;
+}
+
+.movie-row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-row-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: #fff;
+  height: 100%;
+  width: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.movie-row-container:hover .movie-row-arrow {
+  opacity: 1;
+}
+
+.movie-row-arrow:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.movie-row-arrow-left {
+  left: 0;
+}
+
+.movie-row-arrow-right {
+  right: 0;
+}
+
+.movie-row-loading {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.movie-card-skeleton {
+  min-width: 300px;
+  height: 170px;
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 25%,
+    #2a2a2a 50%,
+    #1a1a1a 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 6px;
+}
+
+.large-row .movie-card-skeleton {
+  min-width: 200px;
+  height: 300px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .movie-row {
+    padding: 0 2rem;
+  }
+  
+  .movie-row-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-row {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .movie-row-title {
+    font-size: 1.1rem;
+  }
+  
+  .movie-row-arrow {
+    display: none;
+  }
+}

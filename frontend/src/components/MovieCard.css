@@ -1,0 +1,173 @@
+.movie-card {
+  min-width: 300px;
+  height: 170px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.movie-card-large {
+  min-width: 200px;
+  height: 300px;
+}
+
+.movie-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  z-index: 50;
+}
+
+.movie-card-preview {
+  transform: scale(1.25);
+  z-index: 100;
+}
+
+.movie-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.movie-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+.movie-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.movie-card-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.movie-card-btn-play {
+  background: #fff;
+  color: #000;
+}
+
+.movie-card-btn-play:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: scale(1.1);
+}
+
+.movie-card-btn-icon {
+  background: rgba(42, 42, 42, 0.6);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.movie-card-btn-icon:hover {
+  background: rgba(42, 42, 42, 0.8);
+  border-color: #fff;
+  transform: scale(1.1);
+}
+
+.movie-card-btn-more {
+  margin-left: auto;
+}
+
+.movie-card-details {
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.movie-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.movie-card-match {
+  color: #46d369;
+  font-weight: 600;
+}
+
+.movie-card-year {
+  color: #d2d2d2;
+  font-size: 0.7rem;
+}
+
+.movie-card-genres {
+  color: #d2d2d2;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .movie-card {
+    min-width: 250px;
+    height: 140px;
+  }
+  
+  .movie-card-large {
+    min-width: 170px;
+    height: 255px;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    min-width: 200px;
+    height: 115px;
+  }
+  
+  .movie-card-large {
+    min-width: 140px;
+    height: 210px;
+  }
+  
+  .movie-card-preview {
+    transform: scale(1.05);
+  }
+  
+  .movie-card-btn {
+    width: 28px;
+    height: 28px;
+  }
+}
